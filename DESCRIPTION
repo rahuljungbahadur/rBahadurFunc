@@ -1,7 +1,7 @@
 Package: rBahadurFunc
 Type: Package
 Title: Helpful functions for RMarkdown documents and ggplots
-Version: 0.1.0
+Version: 0.1.2
 Author: Rahul Bahadur
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
@@ -11,9 +11,11 @@ Encoding: UTF-8
 LazyData: true
 Imports:
 	flextable,
+	stats,
 	dplyr,
 	gtable,
 	grid,
 	lattice,
+	tibble,
 	gridExtra
 RoxygenNote: 7.1.1

@@ -18,7 +18,7 @@ funcTableDesign <- function(data_frame, header.name = NULL, tableType = NULL){
       flextable::autofit() %>% return()
   }else if(tableType == "modComp"){   ## tables for comparing models using anova
     data_frame %>%
-      dplyr::rownames_to_column(var = "Model Name") %>%
+      tibble::rownames_to_column(var = "Model Name") %>%
       dplyr::mutate(`Model Name`= stringr::str_extract(`Model Name`, pattern = "_.+$")) %>%
       dplyr::mutate_if(is.numeric, round, 3) %>%
       dplyr::select(-c(call)) %>%
@@ -29,7 +29,7 @@ funcTableDesign <- function(data_frame, header.name = NULL, tableType = NULL){
       flextable::autofit() %>% return()
   }else if(tableType == "parEst"){   ## tables for displaying parameter estimates
     data_frame %>%
-      dplyr::rownames_to_column(var = "Parameters") %>%
+      tibble::rownames_to_column(var = "Parameters") %>%
       dplyr::mutate_if(is.numeric, round, 2) %>%
       flextable::flextable() %>% flextable::add_header_lines("Parameter Estimates") %>%
       flextable::bold(part = "header") %>%
@@ -38,7 +38,7 @@ funcTableDesign <- function(data_frame, header.name = NULL, tableType = NULL){
       flextable::autofit() %>% return()
   }else if(tableType == "fixAnova") {   ## tables for displaying fixed effects anova
     data_frame %>%
-      dplyr::rownames_to_column(var = "Parameters") %>%
+      tibble::rownames_to_column(var = "Parameters") %>%
       dplyr::mutate_if(is.numeric, round, 3) %>%
       flextable::flextable() %>% flextable::add_header_lines("Fixed Effects Anova") %>%
       flextable::bold(part = "header") %>%

@@ -9,7 +9,7 @@
 #' @export
 funcResidAnalysis <- function(modelObject, data, ...){
   grpList <- rlang::list2(...)
-  residNormTest <- shapiro.test(resid(modelObject, type = "pearson"))
+  residNormTest <- stats::shapiro.test(resid(modelObject, type = "pearson"))
 
   print(plot(modelObject, title = "residual plot"))
   plot(density(resid(modelObject, type = "pearson")))
