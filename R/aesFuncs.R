@@ -64,10 +64,10 @@ funcTableDesign <- function(data_frame, header.name = NULL, tableType = NULL){
 funcTableGrob <- function(data_frame){
   table_grob <- gridExtra::tableGrob(data_frame, rows = NULL, theme = ttheme_minimal())
   table_grob <- gtable::gtable_add_grob(table_grob,
-                                grobs = grid::rectGrob(gp = gpar(fill = NA, lwd = 2)),
+                                grobs = grid::rectGrob(gp = grid::gpar(fill = NA, lwd = 2)),
                                 t = 2, b = nrow(table_grob), l = 1, r = ncol(table_grob))
   table_grob <- gtable::gtable_add_grob(table_grob,
-                                grobs = grid::rectGrob(gp = gpar(fill = NA, lwd = 2)),
+                                grobs = grid::rectGrob(gp = grid::gpar(fill = NA, lwd = 2)),
                                 t = 1, l = 1, r = ncol(table_grob))
   return(table_grob)
 }
