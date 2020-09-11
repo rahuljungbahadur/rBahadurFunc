@@ -3,7 +3,7 @@ Type: Package
 Title: Helpful functions for RMarkdown documents and ggplots
 Version: 0.1.3
 Author: Rahul Bahadur
-Maintainer: The package maintainer rahuljungbahadur@gmail.com
+Maintainer: The package maintainer <rahuljungbahadur@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?
