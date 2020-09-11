@@ -52,7 +52,7 @@ funcTableDesign <- function(data_frame, header.name = NULL, tableType = NULL){
 
 
 #' @title Function for generating table grob for custom annotation in ggplot2 graphs.
-#' @description This function converts a data.frame into a tableGrob object with ttheme_minimal.
+#' @description This function converts a data.frame into a tableGrob object with ttheme_minimal using the gridExtra package.
 #' @param data_frame A data.frame object which needs to be added to a ggplot graph as a tableGrob
 #' @return a tableGrob object which can be added to a ggplot2 object using annotation_custom
 #' @example
@@ -62,7 +62,7 @@ funcTableDesign <- function(data_frame, header.name = NULL, tableType = NULL){
 #'
 #' @export
 funcTableGrob <- function(data_frame){
-  table_grob <- gridExtra::tableGrob(data_frame, rows = NULL, theme = ttheme_minimal())
+  table_grob <- gridExtra::tableGrob(data_frame, rows = NULL, theme = gridExtra::ttheme_minimal())
   table_grob <- gtable::gtable_add_grob(table_grob,
                                 grobs = grid::rectGrob(gp = grid::gpar(fill = NA, lwd = 2)),
                                 t = 2, b = nrow(table_grob), l = 1, r = ncol(table_grob))
